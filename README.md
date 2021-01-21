@@ -26,13 +26,13 @@ The user will see a menu and be asked to select a number coresponding with which
 
 
 ## Example
-Hello what would you like to do today:
-1 - View all books available in library.
-2 - Add a new book to our library.
-3 - Borrow a book from the library.
-4 - Return a book.
-5 - View all books you have checked out.
-6 - Exit
+Hello what would you like to do today:  
+1 - View all books available in library.  
+2 - Add a new book to our library.  
+3 - Borrow a book from the library.  
+4 - Return a book.  
+5 - View all books you have checked out.  
+6 - Exit  
 
 ## Architecture
 This app was built with Visual Studio using C#.
