@@ -82,10 +82,6 @@ namespace Library
                 Console.WriteLine($"{library.books[i].Title}  Author: {library.books[i].Author.Name}  Genre: {library.books[i].Genre}");
         }
     
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="library"></param>
         public static void AddBook(Library<Book> library)
         {
             Console.WriteLine("Please enter the title of the book:");
@@ -97,11 +93,13 @@ namespace Library
             Console.WriteLine("Please enter the Authors last name:");
             string lastName = Console.ReadLine();
 
+            //https://stackoverflow.com/questions/972307/how-to-loop-through-all-enum-values-in-c
             foreach (Genre genre in Enum.GetValues(typeof(Genre)))
             Console.WriteLine($"{genre.GetHashCode()} {genre}");
             Console.WriteLine("Please select the number of the genre for this book:");
 
             int input = int.Parse(Console.ReadLine());
+            //https://stackoverflow.com/questions/17486474/find-total-number-of-items-defined-in-an-enum-c-sharp
             int enumLength = Enum.GetNames(typeof(Genre)).Length -1;
             while (input < 0 || input > enumLength)
             {
