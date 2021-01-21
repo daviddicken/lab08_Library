@@ -29,9 +29,6 @@ namespace Library
             Title = title;
             Genre = genre;
         }
-
-
-
     }
 
     public enum Genre

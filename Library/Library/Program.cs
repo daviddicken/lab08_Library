@@ -13,21 +13,6 @@ namespace Library
             Library<Book> myLibrary = new Library<Book>();
             LoadBooks(myLibrary);
             MainMenu(myLibrary, bookBag);
-
-
-
-
-
-            for (int i = 0; i < myLibrary.bookCount; i++)
-                Console.WriteLine(myLibrary.books[i].Title);
-
-            string testString = "book5";
-            Book testBook = GetBook(testString, myLibrary);
-
-            myLibrary.Remove(testBook);
-
-            for (int i = 0; i < myLibrary.bookCount; i++)
-                Console.WriteLine(myLibrary.books[i].Title);
         }
 
         public static void MainMenu(Library<Book> library, List<Book> bookBag)
@@ -63,8 +48,6 @@ namespace Library
                     case "4":
                         Console.Clear();
                         ReturnBook(bookBag, library);
-                        Console.WriteLine("Press any key to continue");
-                        Console.ReadKey();
                         Pause();
                         break;
                     case "5":
@@ -119,7 +102,7 @@ namespace Library
             Console.WriteLine("Please select the number of the genre for this book:");
 
             int input = int.Parse(Console.ReadLine());
-            int enumLength = Enum.GetNames(typeof(Genre)).Length;
+            int enumLength = Enum.GetNames(typeof(Genre)).Length -1;
             while (input < 0 || input > enumLength)
             {
                 Console.Clear();
@@ -160,18 +143,13 @@ namespace Library
 
             if (bookBag.Count > 0)
             {
-
-
                 int userInput = -1;
-                Console.WriteLine("Select the number of the book you would like to return:");
                 while (userInput < 0 || userInput > bookBag.Count - 1)
                 {
-                    userInput = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("Select the number of the book you would like to return:");
+                    userInput = Convert.ToInt32(Console.ReadLine());
                 }
-                //TODO: write test that user enter a valid number
-
-
-
+              
                 Book returnBook = yourBooks[userInput];
                 bookBag.Remove(returnBook);
                 library.Add(returnBook);

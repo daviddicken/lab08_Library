@@ -19,12 +19,6 @@ namespace Library.Classes
             books[bookCount++] = book;
         }
 
-        //public void Print()
-        //{
-        ////    for(int i = 0; i < bookCount; i++)
-        ////        Console.WriteLine(books[i].);
-        //}
-
         //iterate through array
         //if book is found
         // remove book
@@ -39,12 +33,12 @@ namespace Library.Classes
                 if (books[i].Equals(book))
                 {
                     flag = true;
-                    Console.WriteLine($"{book} was removed.");
+                    //Console.WriteLine($"{book} was removed.");
                 }
                 if (flag && i < books.Length - 1) books[i] = books[i + 1];
             }
             if (flag) bookCount--;
-            else Console.WriteLine($"{book} was not found");
+           // else Console.WriteLine($"{book} was not found");
             
         }
         public int Count()
