@@ -36,10 +36,16 @@ namespace Library.Classes
             
             for(int i = 0; i < bookCount; i++)
             {
-                if (books[i].Equals(book)) flag = true;
+                if (books[i].Equals(book))
+                {
+                    flag = true;
+                    Console.WriteLine($"{book} was removed.");
+                }
                 if (flag && i < books.Length - 1) books[i] = books[i + 1];
             }
             if (flag) bookCount--;
+            else Console.WriteLine($"{book} was not found");
+            
         }
         public int Count()
         {

@@ -4,14 +4,19 @@ using System.Text;
 
 namespace Library
 {
-    class Book
+    public class Book
     {
         public String Title { get; set; }
         public Author Author { get; set; }
         public Genre Genre { get; set; }
         
 
-        public Book() { }
+        public Book() 
+        {
+            Title = "Bob's book";
+            Author = new Author("Bob");
+            Genre = Genre.Childrens;
+        }
         public Book(String title, String authorFirst, String authorLast, Genre genre)
         {
             Author = new Author(authorFirst, authorLast);
@@ -29,7 +34,7 @@ namespace Library
 
     }
 
-    enum Genre
+    public enum Genre
     {
         SciFi,
         Fiction,
